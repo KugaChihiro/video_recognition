@@ -110,11 +110,11 @@ async def fetch_transcription_display(content_url: str) -> str:
             return content_data["combinedRecognizedPhrases"][0]["display"]
 
 
-async def transcribe_audio(blob_url: str, az_speech_key: str, az_speech_endpoint: str) -> str:
+async def transcribe_audio(blob_url_mp4: str, az_speech_key: str, az_speech_endpoint: str) -> str:
     """
     音声ファイルを文字起こしするメイン処理。
 
-    :param blob_url: 音声ファイルのURL
+    :param blob_url_mp4: 音声ファイルのURL
     :param az_speech_key: Azure Speech Serviceキー
     :param az_speech_endpoint: Azure Speech Serviceエンドポイント
     :return: 文字起こしされたテキスト
@@ -122,7 +122,7 @@ async def transcribe_audio(blob_url: str, az_speech_key: str, az_speech_endpoint
     headers = await create_headers(az_speech_key)
 
     # ジョブ作成
-    job_url = await create_transcription_job(blob_url, headers, az_speech_endpoint)
+    job_url = await create_transcription_job(blob_url_mp4, headers, az_speech_endpoint)
 
     # ジョブ進行状況を確認
     file_url = await poll_transcription_status(job_url, headers)

@@ -1,0 +1,14 @@
+{
+    "scriptFile": "queue_listener.py",
+    "entryPoint": "listen_for_messages",
+    "bindings": [
+      {
+        "name": "msg",  // トリガーから渡されるメッセージデータ
+        "type": "queueTrigger",  // トリガーの種類
+        "direction": "in",  // データが受け取られる方向
+        "queueName": "your-queue-name",  // キュー名
+        "connection": "AzureWebJobsStorage"  // ストレージ接続文字列
+      }
+    ]
+  }
+  

@@ -1,0 +1,8 @@
+fastapi
+os
+azure-mgmt-compute
+azure-identity
+requests
+azure-storage-queue
+python-dotenv
+azure-functions

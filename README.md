@@ -17,10 +17,6 @@ mp4あるいはwav形式の音声データをアップロードするだけで�
 以下の手順で環境構築を行ってください。
 
 1. **リポジトリをクローン**
-   ```bash
-   git clone https://github.com/sakuya10969/voice_recognition.git
-   cd voice_recognition
-   ```
 
 2. **依存関係のインストール**
    ```
